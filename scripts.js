@@ -7,7 +7,6 @@ const list = document.querySelector('.list')
 
 let active = 0;
 const total = items.length;
-let timer;
 
 function update(direction) {
     document.querySelector('.item.active').classList.remove('active')
@@ -37,11 +36,6 @@ function update(direction) {
     number.textContent = String(active + 1).padStart(2,'0');
 
 }
-
-clearInterval(timer)
-timer = setInterval(() => {
-        update(1)
-    }, 5000);
 
 prevButton.addEventListener('click', () => {
     update(-1)
